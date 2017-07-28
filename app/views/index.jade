@@ -1,0 +1,52 @@
+extends layout
+
+block content
+  h1 Requerimientos
+  ul
+    li Nodejs >= 4
+    li Instalar las dependencias del proyecto "npm install"
+    li Instalar Gulp  "npm install -g gulp"
+  h1 Documentacion para consumir los servicios de la prueba.
+  p Utilizar 
+    strong
+        |Content-Type: application/json 
+        |en la cabezera
+  
+  ul
+    li 
+      h3 Creacion de registro
+      span POST http://localhost:3000/test
+      p BODY
+        pre 
+          |{
+          |  "nombre":"Registro de pruebas",
+          |  "texto":"Que es Nodejs",
+          |  "respuesta":"Node.js es un entorno en tiempo de ejecución multiplataforma, de código abierto, para la capa del servidor (pero no limitándose a ello) basado en el lenguaje de programación ECMAScript, asíncrono, con I/O de datos en una arquitectura orientada a eventos y basado en el motor V8 de Google",
+          |  "fecha":"2017-07-28 05:00:00"
+          |}
+
+  
+    li 
+      h3  Obtener Todos los registros
+      span GET http://localhost:3000/test
+
+   
+    li 
+      h3 Obtener registro por id
+      span GET http://localhost:3000/test/:id
+
+   
+    li
+      h3 Actualizar registro
+      span PUT http://localhost:3000/test/:id
+      p BODY
+        pre 
+          |{
+          |  "nombre":"Registro de pruebas",
+          |  "texto":"Que es Nodejs",
+          |  "respuesta":"Node.js es un entorno en tiempo de ejecución multiplataforma, de código abierto, para la capa del servidor (pero no limitándose a ello) basado en el lenguaje de programación ECMAScript, asíncrono, con I/O de datos en una arquitectura orientada a eventos y basado en el motor V8 de Google",
+          |  "fecha":"2017-07-28 05:00:00"
+          |}
+      
+
+
